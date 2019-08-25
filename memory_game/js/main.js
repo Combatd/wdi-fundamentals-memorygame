@@ -6,16 +6,24 @@ var cardsInPlay = []; // empty array
 var cardOne = cards[0]; // 1st ele of cards array
 var cardTwo = cards[2]; // 2nd ele of cards array
 
-cardsInPlay.push(cardOne); // push to end of cardsInPlay
-console.log('User flipped ' + cardOne);
-cardsInPlay.push(cardTwo);
-console.log('User flipped ' + cardTwo);
-
-// check if there is 2 elements in cardsInPlay
-if (cardsInPlay.length === 2) {
+function checkForMatch() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
-		alert("You found a match!");
+  		console.log("You found a match!");
 	} else {
-		alert("Sorry, try again.");
+  		console.log("Sorry, try again.");
 	}
 }
+
+function flipCard(cardId) { // begin flipCard metthod
+	cardsInPlay.push(cards[cardId]); // push to end of cardsInPlay
+	console.log('User flipped ' + cards[cardId]);
+	
+
+// check if there is 2 elements in cardsInPlay
+	if (cardsInPlay.length === 2) {
+		checkForMatch(); // call helper function
+	}
+} // end flipCard method
+flipCard(0);
+flipCard(2);
+
